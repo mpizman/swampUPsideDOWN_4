@@ -25,6 +25,7 @@ jobs:
         curl --connect-timeout 2 -sSf -k -u "$USER:$PW" $URL/login
 
     - name: Debugging user credentials
+      continue-on-error: true
       run: |
         echo "$USER"
         echo "$PW"
