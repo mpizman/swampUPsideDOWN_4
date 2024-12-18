@@ -53,6 +53,7 @@ jobs:
         curl --connect-timeout 2 -sSf -k -X POST -H 'Content-type: application/json' --data '{"text": "'"$PR_TITLE"'"}' $SLACK_WEBHOOK_URL
 
     - name: backport_assign_check
+      continue-on-error: true
       env:
         PR_NUMBER: ${{ github.event.pull_request.number }}
         URL: ${{env.API_URL}}
